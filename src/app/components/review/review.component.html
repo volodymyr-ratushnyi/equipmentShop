@@ -1,0 +1,24 @@
+<div class="review">
+    <h4>REVIEWS</h4>
+    <div class="info-revier" *ngFor='let revier of product.reviews'>
+        {{revier.name}}
+        <br>
+        <ng-container *ngFor='let i of [1,2,3,4,5]'>
+            <span class="material-icons" *ngIf='product.rating>=i'>star</span>
+            <span class="material-icons" *ngIf='product.rating<i'>star_border</span>
+        </ng-container>
+        <br>
+        {{revier.updatedAt | slice:0:10}}
+        <br>
+        <br>
+        <p>
+            {{revier.comment}}
+        </p>
+    </div>
+    <div class="info-revier">
+        <h4>WRITE A CUSTOMER REVIEW</h4>
+        <p>
+            Please <a routerLink='/sign'>sign in</a> to write a review
+        </p>
+    </div>
+</div>

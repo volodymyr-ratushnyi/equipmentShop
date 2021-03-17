@@ -1,0 +1,26 @@
+.wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+a {
+    display: flex;
+    margin-left: 15px;
+    color: rgb(150, 150, 150);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    span {
+        font-size: 18px;
+        margin-right: 3px;
+    }
+}
+a:hover {
+    color: white;
+}
+a:focus {
+    color: white;
+}
+.active {
+    color: white;
+}

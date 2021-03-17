@@ -1,0 +1,22 @@
+header {
+    background-color: rgb(52, 58, 64);
+    padding: 22px 0;
+    margin-bottom: 15px;
+}
+.wrapper {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.left {
+    display: flex;
+    align-items: center;
+    a {
+        color: white;
+        text-decoration: none;
+        margin-right: 60px;
+        font-weight: 600;
+        font-size: 18px;
+    }
+}

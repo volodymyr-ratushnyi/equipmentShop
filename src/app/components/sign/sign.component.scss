@@ -1,0 +1,49 @@
+.wrapper {
+    width: fit-content;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+$inpBackground: rgb(247, 247, 249);
+$grayOutline: rgb(175, 175, 175);
+$btnBackground: rgb(26, 26, 26);
+h1 {
+    font-size: 30px;
+    margin-top: 20px;
+}
+label {
+    margin-top: 20px;
+    font-size: 16px;
+    display: block;
+}
+input {
+    display: block;
+    width: 40vw;
+    padding: 12px 24px;
+    font-size: 14px;
+    border: none;
+    background-color: $inpBackground;
+    border-radius: 0;
+}
+input:focus {
+    outline: 3px solid $grayOutline;
+    background-color: $inpBackground;
+    border: none;
+    box-shadow: none;
+}
+.button {
+    width: fit-content;
+    border: none;
+    color: white;
+    background-color: $btnBackground;
+    margin-top: 20px;
+    padding: 12px 24px;
+    cursor: pointer;
+}
+.button:focus {
+    outline: 3px solid $grayOutline;
+    background-color: $btnBackground;
+}
+.show {
+    border-radius: 0;
+}

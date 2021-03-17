@@ -1,0 +1,20 @@
+$btnGray: rgb(238, 238, 238);
+.back {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 12px 24px;
+    border-radius: 0;
+    margin: 15px 0;
+}
+.back:hover {
+    background: $btnGray;
+}
+.back:active {
+    background: rgb(228, 228, 228) !important;
+    outline: 4px solid $btnGray;
+}
+.back:focus {
+    background: $btnGray;
+    outline: 4px solid $btnGray;
+}

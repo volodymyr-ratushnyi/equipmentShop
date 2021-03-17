@@ -1,0 +1,32 @@
+.product {
+    border: 1px solid rgb(216, 216, 216);
+    border-radius: 5px;
+    margin-bottom: 32px;
+    width: 280px;
+    padding: 16px;
+    img {
+        width: 240px;
+    }
+    .card-content {
+        padding: 17px;
+    }
+    a {
+        color: black;
+        font-weight: 300;
+        font-size: 16px;
+    }
+    .rating {
+        display: flex;
+        margin: 10px 0;
+    }
+    span:last-child {
+        font-size: 14px;
+    }
+    .material-icons {
+        color: yellow;
+        font-size: 20px;
+    }
+}
+// .product {
+//     margin-left: 1%;
+// }

@@ -1,0 +1,43 @@
+<app-back></app-back>
+<div class="product">
+    <img src="{{referer}}{{product.image}}" alt="ss">
+    <div class="column">
+        <div class="info">
+            <h3>{{product.name | uppercase}}</h3>
+        </div>
+        <div class="info">
+            <ng-container *ngFor='let i of [1,2,3,4,5]'>
+                <span class="material-icons" *ngIf='product.rating>=i'>star</span>
+                <span class="material-icons" *ngIf='product.rating<i'>star_border</span>
+            </ng-container><span>{{product.numReviews}} reviews</span>
+        </div>
+        <div class="info">
+            Price: ${{product.price}}
+        </div>
+        <div class="info">
+            Description: {{product.description}}
+        </div>
+    </div>
+    <div class="column">
+        <div class="bord">Price:
+            <p>${{product.price}}</p>
+        </div>
+        <div class="bord">Status:
+            <p><span *ngIf='product.countInStock > 0; else outOf'>In stock</span>
+                <ng-template #outOf>Out Of Stock</ng-template>
+            </p>
+        </div>
+        <div class="bord">
+            Qty <p><select name="qty" id="" class="form-control qty" [(ngModel)]='count'>
+                    <option [value]="i+1" *ngFor='let val of counts(product.countInStock); let i = index'
+                        [attr.selected]='i===0 ? true: null'>
+                        {{i+1}}</option>
+                </select></p>
+        </div>
+        <div class="bord">
+            <button [attr.disabled]='product.countInStock === 0 ? true : null' (click)='addToCart()'>ADD TO
+                CART</button>
+        </div>
+    </div>
+</div>
+<app-review [product]='product'></app-review>

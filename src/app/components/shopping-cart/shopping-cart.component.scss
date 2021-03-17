@@ -1,0 +1,27 @@
+h1 {
+    font-size: 32px;
+    margin-top: 20px;
+}
+.empty {
+    background-color: rgb(210, 235, 245);
+    border: 1px rgb(192, 227, 242) solid;
+    font-size: 16px;
+    padding: 12px 20px;
+    a {
+        color: black;
+    }
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+td {
+    padding: 12px 15px;
+    img {
+        width: 100px;
+        border-radius: 5px;
+    }
+}
+tr + tr {
+    border-top: 1px solid gray;
+}

@@ -1,0 +1,23 @@
+.info-revier {
+    width: 48%;
+    padding: 15px;
+    .material-icons {
+        color: yellow;
+    }
+}
+.info-revier:last-child {
+    border-top: 1px solid rgb(211, 211, 211);
+    padding-top: 20px;
+    h4 {
+        margin-bottom: 20px;
+    }
+    p {
+        padding: 10px 25px;
+        background-color: rgb(210, 235, 245);
+        color: rgb(16 81 108);
+    }
+    a {
+        text-decoration: none;
+        color: black;
+    }
+}

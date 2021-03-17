@@ -1,0 +1,5 @@
+<div class="wrapper">
+    <input type="search" class="form-control ds-input" placeholder="Search Products..." [(ngModel)]='keyWord'>
+    <button [routerLink]='keyWord === ""? "/":"/search"' type="button" class="btn btn-outline-success"
+        (click)='setSearchValue()'>SEARCH</button>
+</div>

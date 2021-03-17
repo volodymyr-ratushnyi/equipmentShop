@@ -1,0 +1,33 @@
+$btnGray: rgb(238, 238, 238);
+ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    li {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35px;
+        height: 35px;
+        cursor: pointer;
+    }
+    li:hover {
+        background: $btnGray;
+    }
+    li:active {
+        background: $btnGray;
+        outline: 4px rgb(214, 214, 214) solid;
+        z-index: 1;
+    }
+    .curent {
+        background: black;
+        color: white;
+        cursor: default;
+        z-index: 0;
+    }
+    .curent:hover {
+        background: black;
+        color: white;
+    }
+}

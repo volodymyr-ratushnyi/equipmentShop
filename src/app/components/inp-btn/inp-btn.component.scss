@@ -1,0 +1,30 @@
+$btnColor: rgb(92, 192, 115);
+$bcgColor: rgb(247, 247, 249);
+.wrapper {
+    display: flex;
+}
+input {
+    width: 200px;
+    height: 45px;
+    border: none;
+    border-radius: 0;
+    margin-right: 8px;
+    padding: 12px 24px;
+    font-size: 14px;
+    color: gray;
+    background-color: $bcgColor;
+}
+input:focus {
+    background-color: $bcgColor;
+    box-shadow: none;
+}
+button {
+    border-radius: 0;
+    color: $btnColor;
+    border: 2px solid $btnColor;
+    font-size: 12px;
+}
+button:hover {
+    background: $btnColor;
+    border-color: $btnColor;
+}
