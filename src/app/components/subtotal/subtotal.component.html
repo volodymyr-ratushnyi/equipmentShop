@@ -1,1 +1,8 @@
-<p>subtotal works!</p>
+<div class="wrapper">
+    <div class="bord">
+        <h2>SUBTOTAL ({{count }}) ITEMS</h2><span>${{suma | number : '1.2-2'}}</span>
+    </div>
+    <div class="bord">
+        <app-btn routerLink='/sign' text='PROCEED TO CHECKOUT' classForComp='addCart' [empty]='suma===0'></app-btn>
+    </div>
+</div>

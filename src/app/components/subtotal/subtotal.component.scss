@@ -1,0 +1,9 @@
+$gray: rgb(70, 70, 70);
+.bord {
+    border: 1px solid rgb(214, 214, 214);
+    padding: 12px 20px;
+    color: $gray;
+}
+.bord + .bord {
+    border-top: none;
+}

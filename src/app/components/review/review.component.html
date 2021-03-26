@@ -1,12 +1,10 @@
-<div class="review">
-    <h4>REVIEWS</h4>
+<div class="review" *ngIf='product.reviews'>
+    <h1>REVIEWS</h1>
+    <app-message *ngIf='product.reviews.length === 0' [messages]='["No Reviews"]'></app-message>
     <div class="info-revier" *ngFor='let revier of product.reviews'>
         {{revier.name}}
         <br>
-        <ng-container *ngFor='let i of [1,2,3,4,5]'>
-            <span class="material-icons" *ngIf='product.rating>=i'>star</span>
-            <span class="material-icons" *ngIf='product.rating<i'>star_border</span>
-        </ng-container>
+        <app-stars [rating]='product.rating'></app-stars>
         <br>
         {{revier.updatedAt | slice:0:10}}
         <br>
@@ -16,9 +14,8 @@
         </p>
     </div>
     <div class="info-revier">
-        <h4>WRITE A CUSTOMER REVIEW</h4>
-        <p>
-            Please <a routerLink='/sign'>sign in</a> to write a review
-        </p>
+        <h1>WRITE A CUSTOMER REVIEW</h1>
+        <app-message [messages]='["Please","sign in","to write a review"]' link='/sign'></app-message>
+
     </div>
 </div>

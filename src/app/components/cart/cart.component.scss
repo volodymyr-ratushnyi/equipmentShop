@@ -1,6 +1,7 @@
 .wrapper {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 app-shopping-cart {
     width: 65%;

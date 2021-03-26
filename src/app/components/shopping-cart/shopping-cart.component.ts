@@ -1,4 +1,6 @@
-import { IProduct, IProductAndCount } from './../../interfaces/iproduct';
+import { ProductsService } from './../../services/products.service';
+import { CartService } from './../../services/cart.service';
+import { IProduct, IProductAndCount } from '../../interfaces';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,13 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoppingCartComponent implements OnInit {
   products: IProductAndCount[] = JSON.parse(`${localStorage.getItem('products')}`);
-  // product = {} as IProduct;
+  product = {} as IProduct;
   counts = Array;
-  locStorLen = this.products.length;
   count = 0;
-  referer = 'https://nodejs-final-mysql.herokuapp.com'
-  constructor() { }
+
+  constructor(private cartService: CartService, private productService: ProductsService) { }
 
   ngOnInit(): void {
-  };
+  }
+
+  onDeleteFromCart(i: number): void {
+    this.cartService.deleteFromCart(i);
+    this.products = JSON.parse(`${localStorage.getItem('products')}`);
+  }
 }

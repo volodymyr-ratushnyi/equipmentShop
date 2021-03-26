@@ -1,4 +1,6 @@
-import { IProduct } from './../../interfaces/iproduct';
+import { Router } from '@angular/router';
+import { ProductsService } from './../../services/products.service';
+import { IProduct } from '../../interfaces';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -7,10 +9,13 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent implements OnInit {
-  @Input('product') product = {} as IProduct;
-  referer = 'https://nodejs-final-mysql.herokuapp.com'
-  constructor() { }
+  @Input() product = {} as IProduct;
+  referer = this.productService.referer;
+  constructor(private productService: ProductsService, private router: Router) { }
 
   ngOnInit(): void {
+  }
+  goToProduct(): void {
+    this.router.navigate(['product', this.product._id]);
   }
 }

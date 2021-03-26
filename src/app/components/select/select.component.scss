@@ -1,0 +1,10 @@
+select {
+    width: 80px;
+    height: 45px !important;
+    background-color: rgb(245, 245, 245);
+    border: none;
+    border-radius: 0;
+}
+select:focus {
+    outline: 4px solid rgb(211, 211, 211);
+}

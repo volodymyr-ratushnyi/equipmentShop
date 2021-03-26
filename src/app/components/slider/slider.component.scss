@@ -3,6 +3,9 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 15px;
+    .carousel-item {
+        cursor: pointer;
+    }
     .carousel-inner {
         height: 400px;
         h2 {

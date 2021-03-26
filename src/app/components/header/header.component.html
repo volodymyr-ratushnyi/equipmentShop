@@ -2,7 +2,9 @@
     <div class="wrapper">
         <div class="left">
             <a routerLink='/'>SHOP</a>
-            <app-inp-btn></app-inp-btn>
+            <app-inp (outVal)='outVal($event)' classForComp='header' type='search' placeholder="Search Products...">
+            </app-inp>
+            <app-btn classForComp='header' text='SEARCH' (click)='search()'></app-btn>
         </div>
         <div class="right">
             <app-nav></app-nav>

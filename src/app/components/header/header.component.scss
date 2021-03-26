@@ -8,6 +8,7 @@ header {
     margin: auto;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .left {
     display: flex;
@@ -18,5 +19,21 @@ header {
         margin-right: 60px;
         font-weight: 600;
         font-size: 18px;
+    }
+}
+@media (max-width: 669px) {
+    .right {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+@media (max-width: 450px) {
+    .left {
+        flex-direction: column;
+    }
+    app-inp {
+        margin: 20px 0;
     }
 }

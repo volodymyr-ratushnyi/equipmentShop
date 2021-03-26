@@ -1,0 +1,4 @@
+<ng-container *ngFor='let i of [1,2,3,4,5]'>
+    <span class=" material-icons" *ngIf='rating>=i'>star</span>
+    <span class="material-icons" *ngIf='rating<i'>star_border</span>
+</ng-container>

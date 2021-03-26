@@ -1,15 +1,14 @@
-<div class="product">
-    <a [routerLink]='["product", product._id ]'><img src="{{referer}}{{product.image}}" alt=""></a>
-    <div class='card-content'>
-        <a [routerLink]="['product', product._id]">{{product.name}}</a>
-        <br>
-        <div class='rating'>
-            <ng-container *ngFor='let i of [1,2,3,4,5]'>
-                <span class=" material-icons" *ngIf='product.rating>=i'>star</span>
-                <span class="material-icons" *ngIf='product.rating<i'>star_border</span>
-            </ng-container>
-            &nbsp;<span>{{product.numReviews}} reviews</span>
+<div class="wrapper">
+    <div class="product">
+        <img (click)='goToProduct()' class="pointer" src="{{referer}}{{product.image}}" alt="">
+        <div class='card-content'>
+            <span (click)='goToProduct()' class="pointer">{{product.name}}</span>
+            <br>
+            <div class='rating'>
+                <app-stars [rating]='product.rating'></app-stars>
+                &nbsp;<span>{{product.numReviews}} reviews</span>
+            </div>
+            <h3>$ {{product.price}}</h3>
         </div>
-        <h3>$ {{product.price}}</h3>
     </div>
 </div>

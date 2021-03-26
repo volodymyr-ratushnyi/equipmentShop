@@ -1,5 +1,6 @@
-import { IProduct, IProductAndCount } from './../../interfaces/iproduct';
-import { HttpClient } from '@angular/common/http';
+import { CartService } from './../../services/cart.service';
+import { ProductsService } from './../../services/products.service';
+import { IProduct, IProductAndCount } from '../../interfaces';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -10,38 +11,27 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProductComponent implements OnInit {
   product = {} as IProduct;
-  referer = 'https://nodejs-final-mysql.herokuapp.com';
+  referer = this.productsService.referer;
   id = '';
-  products: IProductAndCount[] = [];
+  literal = 'id';
   counts = Array;
   count = 1;
-  constructor(private http: HttpClient, private activateRoute: ActivatedRoute) {
-    this.id = activateRoute.snapshot.params['id'];
+  loader = true;
+  constructor(private activateRoute: ActivatedRoute, private productsService: ProductsService, private cartService: CartService) {
+    this.id = activateRoute.snapshot.params[this.literal];
   }
 
   ngOnInit(): void {
-    this.http.get<IProduct>(`https://nodejs-final-mysql.herokuapp.com/products/${this.id}`).
-      subscribe((res: IProduct) => {
-        this.product = res;
-      })
+    this.productsService.getProductById(this.id).subscribe((res: IProduct) => {
+      this.product = res;
+      this.loader = false;
+    });
   }
   addToCart(): void {
-    let returner = false;
-    JSON.parse(`${localStorage.getItem('products')}`)
-      ? this.products = JSON.parse(`${localStorage.getItem('products')}`)
-      : localStorage.setItem('products', JSON.stringify([]));
-    this.products.forEach((item) => {
-      if (JSON.stringify(item.product) === JSON.stringify(this.product)) {
-        console.log('ss');
-        item.count = parseInt(`${item.count}`);
-        this.count = parseInt(`${this.count}`);
-        item.count += this.count;
-        localStorage.setItem('products', JSON.stringify(this.products));
-        returner = true;
-      }
-    })
-    if (returner) return;
-    this.products.push({ product: this.product, count: this.count });
-    localStorage.setItem('products', JSON.stringify(this.products));
+    this.cartService.addToCart(this.product, this.count);
   }
+  outCount(i: number): void {
+    this.count = i;
+  }
+
 }

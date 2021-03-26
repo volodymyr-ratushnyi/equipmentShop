@@ -5,7 +5,8 @@
         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner w-100">
-        <div class="carousel-item" [ngClass]='{active: i===0}' *ngFor='let product of topProducts; let i = index'>
+        <div (click)='goToProduct(product)' class="carousel-item" [ngClass]='{active: i===0}'
+            *ngFor='let product of topProducts; let i = index'>
             <h2>{{product.name}}</h2>
             <img class="d-block product" src="{{referer}}{{product.image}}" alt="First slide">
         </div>

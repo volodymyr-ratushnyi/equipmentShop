@@ -1,3 +1,5 @@
+import { ProductsService } from './../../services/products.service';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -6,15 +8,20 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./pages.component.scss']
 })
 export class PagesComponent implements OnInit {
-  @Input('pages') pages: any;
-  @Input('valuePage') valuePage = 1;
-  @Output() changeValuePage = new EventEmitter<number>();
+  @Input() pages: any[] = [];
+  valuePage = 1;
+  literal = 'page';
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private productsService: ProductsService) {
 
-  constructor() { }
+  }
 
   ngOnInit(): void {
+    if (this.activatedRoute.snapshot.params[this.literal]) {
+      this.valuePage = this.activatedRoute.snapshot.params[this.literal];
+    }
   }
   changePage(i: number): void {
-    this.changeValuePage.emit(i);
+    this.valuePage = i;
+    this.router.navigate(['/page', i]);
   }
 }

@@ -1,4 +1,6 @@
-import { IProduct } from './../../interfaces/iproduct';
+import { Router } from '@angular/router';
+import { ProductsService } from './../../services/products.service';
+import { IProduct } from '../../interfaces';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,12 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SliderComponent implements OnInit {
   topProducts: IProduct[] = [];
-  referer = 'https://nodejs-final-mysql.herokuapp.com'
-  constructor(private http: HttpClient) { }
+  referer = this.productsService.referer;
+  constructor(private router: Router, private productsService: ProductsService) { }
 
-  async ngOnInit() {
-    this.http.get<IProduct[]>('https://nodejs-final-mysql.herokuapp.com/products/top').subscribe((res: IProduct[]) => {
+  ngOnInit(): void {
+    this.productsService.getTopProducts().subscribe((res: IProduct[]) => {
       this.topProducts = res;
-    })
+    });
   }
+  goToProduct(product: IProduct): void {
+    this.router.navigate(['product', product._id]);
+  }
+
 }

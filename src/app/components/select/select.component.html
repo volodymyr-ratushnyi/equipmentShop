@@ -1,0 +1,12 @@
+<select class="form-control qty" [(ngModel)]='count' (ngModelChange)='onCount(count)'>
+    <option [ngValue]="i+1" *ngFor='let val of counts(allCount); let i = index'>
+        {{i+1}}</option>
+</select>
+<!-- <mat-form-field appearance="fill">
+    <mat-label>Favorite food</mat-label>
+    <mat-select [(ngModel)]="count" (ngModelChange)='onCount(count)'>
+        <mat-option *ngFor='let val of counts(allCount); let i = index' [value]="i+1">
+            {{i+1}}
+        </mat-option>
+    </mat-select>
+</mat-form-field> -->

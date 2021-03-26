@@ -1,9 +1,28 @@
-h2 {
-    font-weight: 600;
-    margin-bottom: 32px;
-}
 .wrapper {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    margin: 0 -15px;
+}
+$full: 100%;
+app-product-card {
+    flex: 0 0 $full/4;
+    max-width: $full/4;
+}
+@media (max-width: 1300px) {
+    app-product-card {
+        flex: 0 0 $full/3;
+        max-width: $full/3;
+    }
+}
+@media (max-width: 1000px) {
+    app-product-card {
+        flex: 0 0 $full/2;
+        max-width: $full/2;
+    }
+}
+@media (max-width: 700px) {
+    app-product-card {
+        flex: 0 0 $full;
+        max-width: $full;
+    }
 }

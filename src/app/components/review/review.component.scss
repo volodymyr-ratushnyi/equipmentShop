@@ -1,5 +1,8 @@
-.info-revier {
+.review {
     width: 48%;
+}
+.info-revier {
+    width: 100%;
     padding: 15px;
     .material-icons {
         color: yellow;
@@ -10,14 +13,5 @@
     padding-top: 20px;
     h4 {
         margin-bottom: 20px;
-    }
-    p {
-        padding: 10px 25px;
-        background-color: rgb(210, 235, 245);
-        color: rgb(16 81 108);
-    }
-    a {
-        text-decoration: none;
-        color: black;
     }
 }

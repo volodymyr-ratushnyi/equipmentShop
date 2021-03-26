@@ -1,3 +1,2 @@
-<app-back></app-back>
-<app-product-card [product]='product' *ngFor='let product of products'></app-product-card>
-<app-pages [pages]='pages' [valuePage]='valuePage' (changeValuePage)='changeValuePage($event)'></app-pages>
+<app-btn classForComp='back' routerLink='/' text='GO BACK'></app-btn>
+<app-products [products]='products'></app-products>

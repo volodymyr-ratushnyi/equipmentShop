@@ -1,0 +1,89 @@
+$btnColor: rgb(92, 192, 115);
+.header {
+    padding: 11px 8px;
+    border-radius: 0;
+    color: $btnColor;
+    border: 2px solid $btnColor;
+    font-size: 12px;
+}
+.header:hover {
+    background: $btnColor !important;
+    border-color: $btnColor;
+    color: white !important;
+}
+.header:focus {
+    background: none;
+    outline: 2px rgb(92, 163, 108) solid;
+    color: $btnColor;
+    border-color: $btnColor;
+}
+.header:active {
+    background: $btnColor !important;
+    border-color: $btnColor !important;
+}
+
+$btnGray: rgb(238, 238, 238);
+.back {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 12px 24px;
+    border-radius: 0;
+    margin: 15px 0;
+    color: black;
+}
+.back:hover {
+    background: $btnGray;
+}
+.back:active {
+    background: rgb(228, 228, 228) !important;
+    outline: 4px solid $btnGray;
+    color: black !important;
+}
+.back:focus {
+    background: $btnGray;
+    outline: 4px solid $btnGray;
+}
+
+.addCart {
+    width: 100%;
+    min-height: 50px;
+    border-radius: 0;
+    margin: auto;
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.addCart:hover {
+    background-color: black;
+}
+.addCart:focus {
+    box-shadow: none;
+}
+.addCart:active {
+    background-color: black !important;
+    box-shadow: none !important;
+}
+.addCart[disabled] {
+    cursor: default;
+    background-color: #505050;
+}
+
+$btnBackground: rgb(26, 26, 26);
+$grayOutline: rgb(175, 175, 175);
+.button {
+    width: fit-content;
+    border: none;
+    color: white;
+    border-radius: 0;
+    font-size: 12px;
+    background-color: $btnBackground;
+    margin-top: 20px;
+    padding: 12px 24px;
+    cursor: pointer;
+}
+.button:focus {
+    outline: 3px solid $grayOutline;
+    background-color: $btnBackground;
+}

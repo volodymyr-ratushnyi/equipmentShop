@@ -1,4 +1,7 @@
-<div class="wrapper">
+<mat-spinner *ngIf='loader'></mat-spinner>
+<div class="wrapper" *ngIf='!loader'>
     <app-slider></app-slider>
-    <app-products></app-products>
+    <h1>LATEST PRODUCTS</h1>
+    <app-products [products]='products'></app-products>
+    <app-pages [pages]='pages'></app-pages>
 </div>

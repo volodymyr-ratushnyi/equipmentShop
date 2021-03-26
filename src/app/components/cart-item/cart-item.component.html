@@ -1,0 +1,31 @@
+<div class="wrapper">
+    <div class="info">
+        <span class="slot">
+            <img src="{{referer}}{{item.product.image}}" [alt]="item.product.name">
+        </span>
+
+        <span class="slot">
+            <h4>{{item.product.name}}</h4>
+        </span>
+    </div>
+
+    <div class="functions">
+        <span class="slot">
+            <h4>${{item.product.price}}</h4>
+        </span>
+
+        <span class="slot">
+            <app-select [allCount]='item.product.countInStock' [count]='item.count'
+                (outCount)=outCount($event,item.product)>
+            </app-select>
+        </span>
+
+        <span class="slot">
+            <span class="material-icons" (click)='deleteFromCart(index)'>
+                delete
+            </span>
+        </span>
+    </div>
+
+
+</div>

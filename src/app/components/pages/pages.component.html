@@ -1,5 +1,5 @@
 <ul>
-    <li (click)='changePage(i+1)' [ngClass]='{curent:valuePage===i+1}' *ngFor='let page of pages; let i = index'>
+    <li (click)='changePage(i+1)' [ngClass]='{curent:valuePage==i+1}' *ngFor='let page of pages; let i = index'>
         <span>{{i+1}}</span>
     </li>
 </ul>

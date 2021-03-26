@@ -16,9 +16,9 @@ export class SignComponent implements OnInit {
     this.logForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(5)]]
-    })
+    });
   }
-  get f() {
+  get f(): any {
     return this.logForm.controls;
   }
   onSubmit(): void {

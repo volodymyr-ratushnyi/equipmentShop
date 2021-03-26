@@ -11,17 +11,6 @@ h1 {
         color: black;
     }
 }
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-td {
-    padding: 12px 15px;
-    img {
-        width: 100px;
-        border-radius: 5px;
-    }
-}
-tr + tr {
-    border-top: 1px solid gray;
+div + div {
+    border-top: 1px solid rgb(204, 204, 204);
 }

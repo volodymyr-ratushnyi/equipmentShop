@@ -1,11 +1,13 @@
+.wrapper {
+    padding: 0 15px;
+}
 .product {
     border: 1px solid rgb(216, 216, 216);
     border-radius: 5px;
     margin-bottom: 32px;
-    width: 280px;
     padding: 16px;
     img {
-        width: 240px;
+        width: 100%;
     }
     .card-content {
         padding: 17px;
@@ -18,15 +20,20 @@
     .rating {
         display: flex;
         margin: 10px 0;
+        span {
+            margin-top: 2px;
+        }
     }
     span:last-child {
         font-size: 14px;
     }
-    .material-icons {
-        color: yellow;
-        font-size: 20px;
+    h3 {
+        font-size: 25px;
     }
 }
-// .product {
-//     margin-left: 1%;
-// }
+.pointer {
+    cursor: pointer;
+}
+span.pointer:hover {
+    text-decoration: underline;
+}

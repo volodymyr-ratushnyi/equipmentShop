@@ -1,0 +1,34 @@
+$inpBackground: rgb(247, 247, 249);
+$grayOutline: rgb(175, 175, 175);
+$btnBackground: rgb(26, 26, 26);
+.header {
+    width: 200px;
+    height: 45px;
+    border: none;
+    border-radius: 0;
+    margin-right: 8px;
+    padding: 12px 24px;
+    font-size: 14px;
+    color: gray;
+    background-color: $inpBackground;
+}
+.header:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.sign {
+    display: block;
+    width: 40vw;
+    padding: 12px 24px;
+    font-size: 14px;
+    border: none;
+    background-color: $inpBackground;
+    border-radius: 0;
+}
+.sign:focus {
+    outline: 3px solid $grayOutline;
+    background-color: $inpBackground;
+    border: none;
+    box-shadow: none;
+}
