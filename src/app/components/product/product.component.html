@@ -9,8 +9,11 @@
                     <h3>{{product.name | uppercase}}</h3>
                 </div>
                 <div class="info">
-                    <app-stars [rating]='product.rating'></app-stars>
-                    <span>{{product.numReviews}} reviews</span>
+                    <div class="box-for-stars">
+                        <app-stars [rating]='product.rating'></app-stars>
+                        <span>{{product.numReviews}} reviews</span>
+                    </div>
+
                 </div>
                 <div class="info">
                     Price: ${{product.price}}

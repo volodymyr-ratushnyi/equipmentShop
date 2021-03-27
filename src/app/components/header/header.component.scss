@@ -1,6 +1,6 @@
 header {
     background-color: rgb(52, 58, 64);
-    height: 85px;
+    min-height: 85px;
     display: flex;
     align-items: center;
     margin-bottom: 15px;
@@ -30,6 +30,9 @@ header {
         width: 100%;
         margin-top: 20px;
     }
+    header {
+        padding: 22px 0;
+    }
 }
 @media (max-width: 450px) {
     .left {
@@ -37,5 +40,8 @@ header {
     }
     app-inp {
         margin: 20px 0;
+    }
+    header {
+        padding: 22px 0;
     }
 }
