@@ -8,19 +8,19 @@ import { IPage } from 'src/app/interfaces';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
+  keyWord = '';
   constructor(private productsService: ProductsService, private router: Router) { }
 
   ngOnInit(): void {
   }
   outVal(s: string): void {
-    this.productsService.setKeyWord(s);
+    this.keyWord = s;
 
   }
   search(): void {
 
-    this.productsService.keyWord
-      ? this.router.navigate(['search', this.productsService.keyWord])
+    this.keyWord
+      ? this.router.navigate(['search', this.keyWord])
       : this.router.navigate(['']);
   }
 }

@@ -7,14 +7,11 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductsService {
-  keyWord = '';
+  logSubject = new Subject();
   referer = 'https://nodejs-final-mysql.herokuapp.com';
 
   constructor(private http: HttpClient) { }
 
-  setKeyWord(s: string): void {
-    this.keyWord = s;
-  }
   getTopProducts(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>('https://nodejs-final-mysql.herokuapp.com/products/top');
   }
