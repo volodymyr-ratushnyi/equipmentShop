@@ -1,7 +1,6 @@
-import { Router } from '@angular/router';
 import { ProductsService } from './../../services/products.service';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { IPage } from 'src/app/interfaces';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -9,9 +8,13 @@ import { IPage } from 'src/app/interfaces';
 })
 export class HeaderComponent implements OnInit {
   keyWord = '';
-  constructor(private productsService: ProductsService, private router: Router) { }
+  s = '';
+  constructor(private productsService: ProductsService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    this.productsService.searchSubject.subscribe((res: any) => {
+      this.keyWord = res;
+    })
   }
   outVal(s: string): void {
     this.keyWord = s;

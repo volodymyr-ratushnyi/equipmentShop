@@ -1,14 +1,14 @@
 import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from './../../services/products.service';
 import { IProduct, IPage } from '../../interfaces';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent implements OnInit, OnDestroy {
   products: IProduct[] = [];
   pages: any;
   constructor(private productsService: ProductsService, private activatedRoute: ActivatedRoute) {
@@ -20,5 +20,9 @@ export class SearchComponent implements OnInit {
         this.pages = new Array(res.pages);
       });
     });
+  }
+
+  ngOnDestroy(): void {
+    this.productsService.searchSubject.next('');
   }
 }

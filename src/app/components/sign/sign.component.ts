@@ -29,11 +29,13 @@ export class SignComponent implements OnInit {
       return;
     }
     this.shower = false;
-    localStorage.setItem('user', this.f.email.value);
-    console.log(this.f.email.value, this.f.password.value);
 
-    this.f.email.value === 'admin@admin.com' && this.f.password.value === 'admin'
-      ? this.productsService.logSubject.next('ADMIN')
-      : this.productsService.logSubject.next('SIGN IN');
+    if (this.f.email.value === 'admin@admin.com' && this.f.password.value === 'admin') {
+      localStorage.setItem('user', JSON.stringify({ email: this.f.email.value, role: 'admin' }));
+      this.productsService.logSubject.next('ADMIN');
+    } else {
+      localStorage.setItem('user', JSON.stringify({ email: this.f.email.value, role: 'user' }));
+      this.productsService.logSubject.next('SIGN IN');
+    }
   }
 }

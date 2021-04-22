@@ -8,6 +8,7 @@ import { Observable, Subject } from 'rxjs';
 })
 export class ProductsService {
   logSubject = new Subject();
+  searchSubject = new Subject();
   referer = 'https://nodejs-final-mysql.herokuapp.com';
 
   constructor(private http: HttpClient) { }

@@ -6,7 +6,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
   styleUrls: ['./inp.component.scss']
 })
 export class InpComponent implements OnInit {
-  outValue = '';
+  @Input() inpValue = '';
   @Input() classForComp = '';
   @Input() placeholder = '';
   @Input() type = '';

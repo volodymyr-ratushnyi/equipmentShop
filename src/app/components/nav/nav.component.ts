@@ -16,7 +16,11 @@ export class NavComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.unSub = this.productsService.logSubject.subscribe((res: any) => {
       this.user = res;
-    })
+    });
+    this.user = JSON.parse(`${localStorage.getItem('user')}`)
+      && JSON.parse(`${localStorage.getItem('user')}`).role === 'admin'
+      ? 'ADMIN'
+      : 'SIGN IN';
   }
 
   ngOnDestroy(): void {
