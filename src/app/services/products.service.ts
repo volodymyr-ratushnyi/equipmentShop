@@ -9,22 +9,22 @@ import { Observable, Subject } from 'rxjs';
 export class ProductsService {
   logSubject = new Subject();
   searchSubject = new Subject();
-  referer = 'https://nodejs-final-mysql.herokuapp.com';
+  referer = 'https://shopqqqqqqqqqqqq.herokuapp.com';
 
   constructor(private http: HttpClient) { }
 
   getTopProducts(): Observable<IProduct[]> {
-    return this.http.get<IProduct[]>('https://nodejs-final-mysql.herokuapp.com/products/top');
+    return this.http.get<IProduct[]>('https://shopqqqqqqqqqqqq.herokuapp.com/api/products/top');
   }
   getProducts(param: string): Observable<IPage> {
-    return this.http.get<IPage>(`https://nodejs-final-mysql.herokuapp.com/products?keyword=&pageNumber=${param}`);
+    return this.http.get<IPage>(`https://shopqqqqqqqqqqqq.herokuapp.com/api/products?keyword=&pageNumber=${param}`);
   }
   getProductsSearch(keyWord: string): Observable<IPage> {
     return this.http.get<IPage>
-      (`https://nodejs-final-mysql.herokuapp.com/products?keyword=${keyWord}&pageNumber=`);
+      (`https://shopqqqqqqqqqqqq.herokuapp.com/api/products?keyword=${keyWord}&pageNumber=`);
   }
   getProductById(id: string): Observable<IProduct> {
-    return this.http.get<IProduct>(`https://nodejs-final-mysql.herokuapp.com/products/${id}`);
+    return this.http.get<IProduct>(`https://shopqqqqqqqqqqqq.herokuapp.com/api/products/${id}`);
   }
 
 }

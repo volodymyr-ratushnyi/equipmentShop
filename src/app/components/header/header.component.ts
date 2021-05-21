@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.productsService.searchSubject.subscribe((res: any) => {
       this.keyWord = res;
-    })
+    });
   }
   outVal(s: string): void {
     this.keyWord = s;
