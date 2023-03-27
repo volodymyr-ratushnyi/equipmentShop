@@ -1,7 +1,6 @@
 import { Router } from '@angular/router';
-import { ProductsService } from './../../services/products.service';
+import { ProductsService } from '../../services/products.service';
 import { IProduct } from '../../interfaces';
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
