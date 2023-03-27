@@ -1,6 +1,6 @@
 import { ProductsService } from './../../services/products.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sign',
@@ -8,10 +8,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./sign.component.scss']
 })
 export class SignComponent implements OnInit {
-  logForm!: FormGroup;
+  logForm!: UntypedFormGroup;
   submitted = false;
   shower = false;
-  constructor(public formBuilder: FormBuilder, private productsService: ProductsService) { }
+  constructor(public formBuilder: UntypedFormBuilder, private productsService: ProductsService) { }
 
   ngOnInit(): void {
     this.logForm = this.formBuilder.group({
